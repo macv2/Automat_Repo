@@ -1,14 +1,16 @@
 ---
-- name: Comprobaciones de exisencia de usuario
+- name: System Configuration Checks
   hosts: node1
   become: true
+  vars:
+    user_name: 'Roger'
   tasks:
     - name: Check user existence
       ansible.builtin.command:
-        cmd: id myuser
+        cmd: "id {{ user_name }}"
       register: user_check
- 
+
     - name: Report user status
       ansible.builtin.debug:
-        msg: "User 'myuser' exists."
+        msg: "User {{ user_name }} exists."
       when: user_check.rc == 0
