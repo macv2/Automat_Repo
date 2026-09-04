@@ -1,0 +1,16 @@
+---
+- name: Configuracion Basica del Sistema
+  hosts: node1
+  become: true
+  tasks:
+    - name: Actualizar todos los paquetes relacionados con seguridad
+      ansible.builtin.package:
+        name: '*'
+        state: latest
+        security: true
+   
+    - name: Create a new user
+      ansible.builtin.user:
+        name: myuser
+        state: present
+        create_home: true
