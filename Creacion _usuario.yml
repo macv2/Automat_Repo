@@ -1,17 +1,10 @@
 ---
-- name: Basic System Setup
+- name: Crear Usuario
   hosts: all
   become: true
-  vars:
-    user_name: 'Roger'
-  tasks:
-    - name: Update all security-related packages
-      ansible.builtin.package:
-        name: '*'
-        state: latest
-        security: true
 
-    - name: Create a new user
+  tasks:
+    - name: Crear un nuevo usuario
       ansible.builtin.user:
         name: "{{ user_name }}"
         state: present
