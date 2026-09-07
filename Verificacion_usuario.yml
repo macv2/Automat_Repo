@@ -6,7 +6,7 @@
   tasks:
     - name: Verificar existencia de Usuario
       ansible.builtin.user:
-        name: {{ user_name }}
+        name: "{{ user_name }}"
       check_mode: true
       register: user_check   
       
