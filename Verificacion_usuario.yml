@@ -13,4 +13,4 @@
     - name: Reportar status de usuario
       ansible.builtin.debug:
         msg: "El Usuario {{ user_name }} existe."
-      when: user_check.state == 'present'
+      when: user_check.state | default('') == 'present'
