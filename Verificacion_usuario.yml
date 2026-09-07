@@ -5,11 +5,12 @@
 
   tasks:
     - name: Verificar existencia de Usuario
-      ansible.builtin.command:
-        cmd: "id {{ user_name }}"
-      register: user_check
-
+      ansible.builtin.user:
+        name: {{ user_name }}
+      check_mode: true
+      register: user_check   
+      
     - name: Reportar status de usuario
       ansible.builtin.debug:
         msg: "El Usuario {{ user_name }} existe."
-      when: user_check.rc == 0
+      when: user_check.state | d('') == 'present'
