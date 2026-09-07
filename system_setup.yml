@@ -1,6 +1,6 @@
 ---
 - name: Basic System Setup
-  hosts: node1
+  hosts: all
   become: true
   vars:
     user_name: 'Roger'
