@@ -1,0 +1,7 @@
+- name: start an instance and Add EBS
+  amazon.aws.ec2_instance:
+    name: "public-withebs-instance"
+    vpc_subnet_id: subnet-5ca1ab1e
+    instance_type: t2.micro
+    key_name: "prod-ssh-key"
+    security_group: default
