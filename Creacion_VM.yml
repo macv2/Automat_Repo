@@ -1,9 +1,6 @@
 - name: Crear una máquina virtual
   community.vmware.vmware_guest:
-    hostname: "{{ vcenter_hostname }}"
-    username: "{{ vcenter_username }}"
-    password: "{{ vcenter_password }}"
+    name: test_vm_0001    
     folder: /DC1/vm/
-    name: test_vm_0001
     state: poweredon
     guest_id: centos64Guest
