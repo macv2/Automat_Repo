@@ -1,6 +1,6 @@
-- name: start an instance and Add EBS
+- name: iniciar una instancia 
   amazon.aws.ec2_instance:
-    name: "public-withebs-instance"
+    name: "public-instance"
     vpc_subnet_id: subnet-5ca1ab1e
     instance_type: t2.micro
     key_name: "prod-ssh-key"
