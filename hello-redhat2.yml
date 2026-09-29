@@ -1,0 +1,19 @@
+---
+- name: create env
+  hosts: localhost
+  tasks:
+    - name: Add hosts
+      ansible.builtin.add_host:
+        name: "{{ hosts_update }}"
+        groups: redhat
+      with_items: '{{ hosts_update.split() }}'
+
+- name: Install Tcpdump
+  hosts: redhat
+  become: yes
+  remote_user: root
+  tasks:
+    - name: Install tcpdump
+      ansible.builtin.yum:
+        name: tcpdump
+        state: present
