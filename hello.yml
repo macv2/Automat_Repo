@@ -2,6 +2,6 @@
   connection: local
   tasks:
     - debug:
-        msg: "Hola Miguel"
+        msg: "Hola Miguel desde el server {{ hosts_update }}"
     - debug:
         msg: "Acevedo"        
