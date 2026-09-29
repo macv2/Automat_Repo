@@ -11,7 +11,7 @@
 - name: Get uptime host
   hosts: redhat
   become: yes
-  remote_user: root
+  #remote_user: root
   tasks:
     - name: Uptime host test
       ansible.builtin.shell: uptime
