@@ -12,6 +12,3 @@
         run_job_template:
           name: di_hola
           organization: Default
-          job_args:
-            extra_vars:
-              hosts_update: "{{ event.payload.host_host }}"
