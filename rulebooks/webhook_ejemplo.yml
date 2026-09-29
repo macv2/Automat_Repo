@@ -4,11 +4,11 @@
   sources:
     - ansible.eda.webhook:
         host: 0.0.0.0
-        port: 6000
+        port: 
   rules:
     - name: Saludo
-      condition: event.payload.event_name == 'Hello'
+      condition: event.payload.event_name == 'Hola'
       action:
         run_job_template:
-          name: di_hola
+          name: 
           organization: Default
