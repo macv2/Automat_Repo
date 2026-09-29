@@ -11,7 +11,7 @@
 - name: Install Tcpdump
   hosts: redhat
   become: yes
-  remote_user: root
+  remote_user: ec2-user
   tasks:
     - name: Install tcpdump
       ansible.builtin.yum:
