@@ -1,5 +1,8 @@
 - hosts: localhost
   connection: local
+  vars:
+    hosts_update: ""
+  
   tasks:
     - debug:
         msg: "Hola Miguel desde el server {{ hosts_update }}"
