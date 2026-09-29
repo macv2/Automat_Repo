@@ -1,2 +1,17 @@
-...
+---
+- name: create env
+  hosts: localhost
+  tasks:
+    - name: Add hosts
+      ansible.builtin.add_host:
+        name: "{{ hosts_update }}"
+        groups: redhat
+      with_items: '{{ hosts_update.split() }}'
 
+- name: Get uptime host
+  hosts: redhat
+  become: yes
+  #remote_user: root
+  tasks:
+    - name: Uptime host test
+      ansible.builtin.shell: uptime
