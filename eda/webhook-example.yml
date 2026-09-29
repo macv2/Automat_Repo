@@ -11,3 +11,6 @@
       action:
         run_playbook:
           name: hello-redhat.yml
+          extra_vars:
+            hosts_update: "{{ event.payload.host_host }}"
+          
