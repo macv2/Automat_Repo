@@ -1,16 +1,16 @@
 ---
-- name: Listen for events on a webhook
+- name: Escuchar eventos en un webhook
   hosts: all
   sources:
     - ansible.eda.webhook:
         host: 0.0.0.0
         port: 6000
   rules:
-    - name: Say Hello
+    - name: Di hola
       condition: event.payload.event_name == 'Hello'
       action:
         run_job_template:
-          name: redhat-aap-extra-vars-eda
+          name: Di-Hola
           organization: Default
           job_args:
             extra_vars:
