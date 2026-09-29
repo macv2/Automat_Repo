@@ -5,6 +5,6 @@
   
   tasks:
     - debug:
-        msg: "Hola Miguel desde el server {{ hosts_update }}"
+        msg: "Hola Miguel"
     - debug:
         msg: "Acevedo"        
