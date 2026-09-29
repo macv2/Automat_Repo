@@ -2,4 +2,4 @@
   connection: local
   tasks:
     - debug:
-        msg: "Hola CEVALDOM"
+        msg: ""
